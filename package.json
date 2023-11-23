@@ -1,0 +1,14 @@
+{
+  "name": "quiniela.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "repository": "https://github.com/PlannedSnow67/quiniela.io.git",
+  "author": "MiguelAB1997 <miguel.becerra@emergys.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
