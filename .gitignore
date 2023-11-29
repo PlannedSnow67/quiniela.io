@@ -128,3 +128,8 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+
+# omit the sqlite database files
+
+quiniela.io.sqlite3
