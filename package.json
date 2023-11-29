@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "node index.js"
+    "dev": "nodemon src/index.js"
   },
   "repository": "https://github.com/PlannedSnow67/quiniela.io.git",
   "author": "MiguelAB1997 <miguel.becerra@emergys.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2"
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1",
+    "sequelize": "^6.35.1",
+    "sequelize-cli": "^6.6.2",
+    "sqlite3": "^5.1.6"
   }
 }
