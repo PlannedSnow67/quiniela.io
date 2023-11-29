@@ -1,9 +1,9 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes, Model } = require('sequelize');
 const { sequelize } = require('../config');
 const { Country, League, Stadium } = require('.');
 
-
-const Team = sequelize.define('Team', {
+class Team extends Model { }
+Team.init({
     name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -36,10 +36,11 @@ const Team = sequelize.define('Team', {
             key: 'id'
         }
     },
+}, {
+    // Other model options go here
+    sequelize, // We need to pass the connection instance
+    modelName: 'Teams' // We need to choose the model name
 });
 
-Team.belongsTo(League, { foreignKey: 'leagueId' });
-Team.belongsTo(Country, { foreignKey: 'countryId' });
-Team.belongsTo(Stadium, { foreignKey: 'stadiumId' });
 
 module.exports = Team;

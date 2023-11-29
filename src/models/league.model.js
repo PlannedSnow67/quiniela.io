@@ -1,8 +1,9 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes, Model } = require('sequelize');
 const { sequelize } = require('../config');
 const Team = require('./team.model');
 
-const League = sequelize.define('League', {
+class League extends Model { }
+League.init({
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -14,8 +15,12 @@ const League = sequelize.define('League', {
         allowNull: false
     },
 
-});
+},
+    {
+        // Other model options go here
+        sequelize, // We need to pass the connection instance
+        modelName: 'Leagues' // We need to choose the model name
+    });
 
-League.hasMany(Team, { foreignKey: 'leagueId' });
 
 module.exports = League;

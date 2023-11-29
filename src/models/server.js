@@ -10,6 +10,7 @@ class Server {
         this.teamPath = '/api/teams';
 
         this.middlewares();
+        this.database();
         this.routes();
     }
 
@@ -26,6 +27,11 @@ class Server {
 
     routes() {
         this.app.use(this.teamPath, require('../routes/team.routes'));
+    }
+
+    database() {
+        require('../models');
+        require('../models/association')
     }
 
 
