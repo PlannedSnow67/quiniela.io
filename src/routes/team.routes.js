@@ -1,11 +1,26 @@
 const { Router } = require('express');
-// const { createTeam } = require('../controllers');
+const { createTeam, readAllTeams, readOneTeam, updateTeam, deleteTeam } = require('../controllers');
+const { teamSchema, getTeamByIdSchema } = require('../schemas');
+
+const { validateSchema } = require('../middlewares');
+
 const router = Router();
 
-const createTeam = () => {
+// create
+router.post('/', validateSchema(teamSchema, 'body'), createTeam);
 
-}
+// read all
+router.get('/', readAllTeams);
 
-router.post('/', createTeam);
+// read one
+router.get('/:id', validateSchema(getTeamByIdSchema, 'query'), readOneTeam);
+
+// update
+router.put('/:id', updateTeam);
+
+// delete
+router.delete('/:id', deleteTeam);
+
+
 
 module.exports = router;

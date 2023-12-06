@@ -1,6 +1,14 @@
-// const { createTeam } = require('./teams.controller');
+const { createTeam,
+    readAllTeams,
+    readOneTeam,
+    updateTeam,
+    deleteTeam } = require('./team.controller');
 
 
-// module.exports = {
-//     createTeam,
-// };
+module.exports = {
+    createTeam,
+    readAllTeams,
+    readOneTeam,
+    updateTeam,
+    deleteTeam
+};
