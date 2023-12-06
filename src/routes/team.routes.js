@@ -1,11 +1,11 @@
 const { Router } = require('express');
+// const { createTeam } = require('../controllers');
 const router = Router();
 
+const createTeam = () => {
 
-router.post('/', (req, res) => {
-    const { body } = req;
-    console.log(req);
-    res.send({ body });
-});
+}
+
+router.post('/', createTeam);
 
 module.exports = router;

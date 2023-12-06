@@ -1,6 +1,5 @@
 const { DataTypes, Model } = require('sequelize');
 const { sequelize } = require('../config');
-const Team = require('./team.model');
 
 
 class Country extends Model { }

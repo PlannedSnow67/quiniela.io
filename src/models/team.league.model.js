@@ -1,38 +1,30 @@
 const { DataTypes, Model } = require('sequelize');
 const { sequelize } = require('../config');
-const { Country, League, Stadium } = require('.');
 
-class Team extends Model { }
-Team.init({
-    name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    image: {
-        type: DataTypes.STRING,
-        allowNull: true,
-    },
-    countryId: {
+class TeamLeague extends Model { }
+
+TeamLeague.init({
+    teamId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: Country,
+            model: 'Teams',
             key: 'id'
         }
     },
-    stadiumId: {
+    leagueId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: Stadium,
+            model: 'Leagues',
             key: 'id'
         }
     },
 }, {
     // Other model options go here
     sequelize, // We need to pass the connection instance
-    modelName: 'Teams' // We need to choose the model name
+    modelName: 'TeamLeague' // We need to choose the model name
 });
 
 
-module.exports = Team;
+module.exports = TeamLeague;

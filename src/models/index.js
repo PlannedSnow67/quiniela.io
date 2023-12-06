@@ -5,6 +5,9 @@ const Team = require("./team.model");
 const League = require("./league.model");
 const Country = require("./country.model");
 const Stadium = require("./stadium.model");
+const TeamLeague = require("./team.league.model");
+const LeagueStadium = require("./league.stadium.model");
+
 //
 
 
@@ -24,7 +27,9 @@ const models = {
     Team,
     League,
     Country,
-    Stadium
+    Stadium,
+    TeamLeague,
+    LeagueStadium
 }
 
 

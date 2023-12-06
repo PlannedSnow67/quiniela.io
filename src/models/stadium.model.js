@@ -14,6 +14,14 @@ Stadium.init({
         type: DataTypes.STRING,
         allowNull: false
     },
+    countryId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'Countries',
+            key: 'id'
+        }
+    },
 
 }, {
     // Other model options go here
